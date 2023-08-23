@@ -12,7 +12,7 @@ class DiskPage(BaseOps):
         self.wait_for_element(s.BIG_CREATE_BTN)
         self.click_on(s.BIG_CREATE_BTN)
         self.wait_for_text(s.CREATE_MODAL, s.CREATE_MODAL_TEXT)
-        time.sleep(0.5)
+        time.sleep(0.5) # С этой особенностью Яндекса я боролся часа 4, победил только так
         self.input_text(s.FOLDER_NAME_FIELD, s.FOLDER_NAME)
         self.click_on(s.CONFIRM_BTN)
 
