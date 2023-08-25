@@ -17,5 +17,10 @@ def api_create_data():
 def test_create_folder(api_create_data):
     url, method, prefix, headers, code = api_create_data
     response = Api(url).folder(method, prefix, headers)
-    validate(instance=response.json(), schema=schema.create_schema)
+    try:
+        validate(instance=response.json(), schema=schema.create_schema)
+        logger.info("schema validate is correct")
+    except AssertionError:
+        logger.info("Schema do not match")
+        raise
     assert response.status_code == code
