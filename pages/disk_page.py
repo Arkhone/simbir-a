@@ -20,8 +20,8 @@ class DiskPage(BaseOps):
         self.wait_for_element(s.FOLDER_ICON)
         self.double_click(s.FOLDER_ICON)
 
-    def add_file(self):
-        self.input_text(s.DOWNLOAD_FIELD, s.PATH_TO_FILE)
+    def add_file(self, path_to_file):
+        self.input_text(s.DOWNLOAD_FIELD, path_to_file)
         self.wait_for_text(s.UPLOAD_SUCCESS, s.UPLOAD_SUCCESS_TEXT)
 
     def get_filename(self):
