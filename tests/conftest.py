@@ -35,3 +35,9 @@ def login(driver):
     user.click_on(s.ACC_ICON)
     user.wait_for_text(s.USERNAME, s.TEST_LOGIN)
     user.click_on(s.LOGOUT_BTN)
+
+
+@pytest.fixture()
+def word_example():
+    return os.path.abspath("Файл для копирования.docx")
+
